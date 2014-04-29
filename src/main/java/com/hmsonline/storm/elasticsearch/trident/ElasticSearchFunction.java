@@ -6,7 +6,7 @@ package com.hmsonline.storm.elasticsearch.trident;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
-import org.elasticsearch.ElasticSearchException;
+import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
@@ -63,12 +63,12 @@ public class ElasticSearchFunction extends BaseFunction {
     private void run(TridentTuple tuple) {
         try {
             index(tuple);
-        } catch (ElasticSearchException e) {
+        } catch (ElasticsearchException e) {
             StormElasticSearchUtils.handleElasticSearchException(getClass(), e);
         }
     }
 
-    private void index(TridentTuple tuple) throws ElasticSearchException {
+    private void index(TridentTuple tuple) throws ElasticsearchException {
         String indexName = tridentElasticSearchMapper.mapToIndex(tuple);
         String type = tridentElasticSearchMapper.mapToType(tuple);
         String key = tridentElasticSearchMapper.mapToKey(tuple);

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
-import org.elasticsearch.ElasticSearchException;
+import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest;
 import org.elasticsearch.action.bulk.BulkItemResponse;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -122,7 +122,7 @@ public class ElasticSearchState implements State {
                     }
                 }
             }
-        } catch (ElasticSearchException e) {
+        } catch (ElasticsearchException e) {
             StormElasticSearchUtils.handleElasticSearchException(getClass(), e);
         }
     }
@@ -161,7 +161,7 @@ public class ElasticSearchState implements State {
 //                    }
                 }
             }
-        } catch (ElasticSearchException e ) {
+        } catch (ElasticsearchException e ) {
             StormElasticSearchUtils.handleElasticSearchException(getClass(), e);
         }
 
@@ -175,7 +175,7 @@ public class ElasticSearchState implements State {
             } else {
                 client.admin().indices().prepareCreate(indexName).execute().actionGet();
             }
-        } catch (ElasticSearchException e) {
+        } catch (ElasticsearchException e) {
             StormElasticSearchUtils.handleElasticSearchException(getClass(), e);
         }
     }
@@ -187,7 +187,7 @@ public class ElasticSearchState implements State {
                 client.admin().indices().preparePutMapping(indexName).setType(indexType).setSource(json).execute()
                         .actionGet();
             }
-        } catch (ElasticSearchException e) {
+        } catch (ElasticsearchException e) {
             StormElasticSearchUtils.handleElasticSearchException(getClass(), e);
         }
     }
