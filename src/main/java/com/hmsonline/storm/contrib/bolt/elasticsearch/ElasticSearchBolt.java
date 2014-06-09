@@ -56,7 +56,9 @@ import static org.elasticsearch.node.NodeBuilder.*;
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
         String elasticSearchHost = (String) stormConf.get(StormElasticSearchConstants.ES_HOST);
-        Integer elasticSearchPort = Utils.getInt(stormConf.get(StormElasticSearchConstants.ES_PORT));
+        Integer elasticSearchPort = 9300;
+        elasticSearchPort = Integer.parseInt(stormConf.get(StormElasticSearchConstants.ES_PORT).toString());
+        
         String elasticSearchCluster = (String) stormConf.get(StormElasticSearchConstants.ES_CLUSTER_NAME);
         Boolean localMode = (Boolean) stormConf.get(ELASTIC_LOCAL_MODE);
 
