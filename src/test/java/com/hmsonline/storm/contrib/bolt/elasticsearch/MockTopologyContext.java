@@ -11,7 +11,7 @@ public class MockTopologyContext extends TopologyContext {
 
     public MockTopologyContext(StormTopology topology) {
         super(topology, new HashMap<String, String>(), new HashMap<Integer, String>(), null, null, null, null, null, -1, -1,
-                new ArrayList<Integer>(), null, null, null);
+                new ArrayList<Integer>(), null, null, null, null, null);
     }
 
     public Fields getComponentOutputFields(String componentId, String streamId) {
