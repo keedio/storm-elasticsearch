@@ -130,7 +130,6 @@
 							<exclude>io.netty:netty</exclude>
 		                                </excludes>
 		                            </artifactSet>
-	        	                    <minimizeJar>true</minimizeJar>
 		       	                </configuration>
 	                	   </execution>
 		               </executions>
