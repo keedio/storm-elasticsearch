@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.w2olabs</groupId>
+	<groupId>org.keedio.storm</groupId>
 	<artifactId>storm-elasticsearch</artifactId>
-	<version>0.1.3</version>
+	<version>0.1.4</version>
 	<name>Storm Elastic Search Support</name>
 	<description>Storm Elastic Search Support</description>
 	
@@ -24,6 +24,19 @@
 		<developerConnection>scm:git:git@github.com:hmsonline/storm-elastic-search.git</developerConnection>
 		<url>:git@github.com:hmsonline/storm-elastic-search.git</url>
 	</scm>
+
+	<distributionManagement>
+    		<repository>
+        		<id>keedio-releases</id>
+        		<name>Keedio Releases</name>
+        		<url>http://jenkins.keedio.com:8081/nexus/content/repositories/releases/</url>
+    		</repository>
+    		<snapshotRepository>
+        		<id>keedio-snapshots</id>
+        		<name>Keedio Snapshots</name>
+        		<url>http://jenkins.keedio.com:8081/nexus/content/repositories/snapshots/</url>
+    		</snapshotRepository>
+	</distributionManagement>
 
 	<properties>
 		<elastic.search.version>1.2.0</elastic.search.version>
